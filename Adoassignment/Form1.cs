@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -12,50 +13,47 @@ namespace Adoassignment
 {
     public partial class Form1 : Form
     {
-        public struct Member
+        BindingList<Member> memberStart = new BindingList<Member>()
         {
-            public String name;
-            public double balance;
-        }
-        public Form1()
-        {
-            InitializeComponent();
-        }
+            new Member("Test"),
+            new Member("Why"),
+        };
 
-        
-        List<Member> memberStart = new List<Member>();
         List<Member> memberRound = new List<Member>();
         List<Member> memberPay = new List<Member>();
 
-       
+        public Form1()
+        {
+            InitializeComponent();
+            
+        }
+
+        
 
         private void BtnAddBigTeam_Click(object sender, EventArgs e)
         {
-            foreach(Member m in memberStart)
-            {
-                listMembers.Items.Add(m.name);
-            }
-     
+            memberStart.Add(new Member("Steve"));
+            memberStart.Add(new Member("David"));
+            memberStart.Add(new Member("John"));
+
+            
+            
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            for(int i=0; i< 10; i++)
-            {               
-                Member what = new Member();
-                what.name = i.ToString();
-                what.balance = 0;
-                memberStart.Add(what);
-            }
+            listMembers.DataSource = memberStart;
+            listMembers.DisplayMember = "name";
+            
         }
 
         private void BtnAddMember_Click(object sender, EventArgs e)
         {
             if (txtAddMember != null) //wtf 
             {
-                Member toAdd = new Member();
-                toAdd.name = txtAddMember.Text;
-                toAdd.balance = 0;
+                Member toAdd = new Member(txtAddMember.Text);
                 memberStart.Add(toAdd);
                 listMembers.Items.Add(toAdd.name);
             }
@@ -73,6 +71,29 @@ namespace Adoassignment
                    // memberStart.Remove(m);
                 //}
             }
+        }
+
+        private void BtnAddMemberToRound_Click(object sender, EventArgs e)
+        {
+            var selectedName = getSelectedMemberName();
+
+            if (selectedName == null)
+            {
+                MessageBox.Show("Please, select a team member first");
+            }
+            else
+            {
+                //if(!listBalanceInfo.Items.Contains())
+                listRoundInfo.Items.Add(selectedName);
+
+            }
+
+        }
+
+        private String getSelectedMemberName()
+        {
+
+            return listMembers?.SelectedItem.ToString();
         }
     }
 }
