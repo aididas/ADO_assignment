@@ -46,6 +46,11 @@ namespace Adoassignment
             listMembers.DisplayMember = "name";
             boxBuyer.DataSource = memberStart;
             
+
+            listRoundInfo.DataSource = memberRound;
+            listRoundInfo.DisplayMember = "name";
+
+
         }
 
         private void BtnAddMember_Click(object sender, EventArgs e)
@@ -72,51 +77,46 @@ namespace Adoassignment
             }
         }
 
+
+
+        private void BtnRemoveMemberFromRound_Click(object sender, EventArgs e)
+        {
+            var selectedMember = listRoundInfo.SelectedItem as Member;
+            memberRound.Remove(selectedMember);
+        }
+
         private void BtnAddMemberToRound_Click(object sender, EventArgs e)
         {
-            var selectedName = getSelectedMemberName();
+            var selectedMember = listMembers.SelectedItem as Member;
 
-            if (selectedName == null)
-            {
+            if (selectedMember == null)
                 MessageBox.Show("Please, select a team member first");
-            }
             else
             {
-                //if(!listBalanceInfo.Items.Contains())
-                listRoundInfo.Items.Add(selectedName);
-
+                if (!memberRound.Contains(selectedMember))
+                    memberRound.Add(selectedMember);
             }
 
         }
 
-        private String getSelectedMemberName()
+        private void BtnBuyRound1_Click(object sender, EventArgs e)
         {
-
-            return listMembers?.SelectedItem.ToString();
-        }
-
-        private void BtnBuyRound_Click(object sender, EventArgs e)
-        {
-
-            foreach (Member m in memberStart)
-                memberPay.Add(m);
-
-
-            if (txtPrice != null)
+            
+            
+            if (!String.IsNullOrWhiteSpace(txtPrice.Text))
             {
                 for (int i = memberStart.Count - 1; i >= 0; i--)
-                {
-                    
-                    if (memberPay[i] == boxBuyer.SelectedItem)
+                {                   
+                    if (memberStart[i] == boxBuyer.SelectedItem)
                     {
                         MessageBox.Show("works");
-                        memberPay[i].balance += double.Parse(txtPrice.Text);
+                        memberStart[i].balance += double.Parse(txtPrice.Text);
                     }
                     foreach (Member m in memberRound)
                     {
-                        if (m.name == memberPay[i].name)
+                        if (m.name == memberStart[i].name)
                         {
-                            memberPay[i].balance -= double.Parse(txtPrice.Text) / memberRound.Count;
+                            memberStart[i].balance -= double.Parse(txtPrice.Text) / memberRound.Count;
                             break;
                         }
                     }
@@ -126,9 +126,10 @@ namespace Adoassignment
             else
                 MessageBox.Show("Fill in the round buyer info");
 
-            listBalanceInfo.DataSource = memberPay;
+            listBalanceInfo.DataSource = memberStart;
             //listBalanceInfo.DisplayMember = 
 
         }
+
     }
 }
