@@ -41,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBuyer = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.listRoundInfo = new System.Windows.Forms.ListBox();
             this.listBalanceInfo = new System.Windows.Forms.ListBox();
@@ -175,16 +174,9 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Round price";
             // 
-            // txtBuyer
-            // 
-            this.txtBuyer.Location = new System.Drawing.Point(308, 360);
-            this.txtBuyer.Name = "txtBuyer";
-            this.txtBuyer.Size = new System.Drawing.Size(100, 20);
-            this.txtBuyer.TabIndex = 11;
-            // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(365, 250);
+            this.txtPrice.Location = new System.Drawing.Point(377, 250);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 20);
             this.txtPrice.TabIndex = 12;
@@ -222,7 +214,6 @@
             this.Controls.Add(this.listBalanceInfo);
             this.Controls.Add(this.listRoundInfo);
             this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.txtBuyer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBuyRound);
@@ -254,7 +245,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBuyer;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.ListBox listRoundInfo;
         private System.Windows.Forms.ListBox listBalanceInfo;

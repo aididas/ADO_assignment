@@ -97,13 +97,19 @@ namespace Adoassignment
 
         private void BtnBuyRound_Click(object sender, EventArgs e)
         {
-            if (txtBuyer != null && txtPrice != null)
+
+            foreach (Member m in memberStart)
+                memberPay.Add(m);
+
+
+            if (txtPrice != null)
             {
                 for (int i = memberStart.Count - 1; i >= 0; i--)
                 {
-                    memberPay[i] = memberStart[i];
-                    if (memberPay[i].name == txtBuyer.Text)
+                    
+                    if (memberPay[i] == boxBuyer.SelectedItem)
                     {
+                        MessageBox.Show("works");
                         memberPay[i].balance += double.Parse(txtPrice.Text);
                     }
                     foreach (Member m in memberRound)
@@ -119,7 +125,9 @@ namespace Adoassignment
             }
             else
                 MessageBox.Show("Fill in the round buyer info");
-            
+
+            listBalanceInfo.DataSource = memberPay;
+            //listBalanceInfo.DisplayMember = 
 
         }
     }
