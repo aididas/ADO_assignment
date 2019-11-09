@@ -13,14 +13,10 @@ namespace Adoassignment
 {
     public partial class Form1 : Form
     {
-        BindingList<Member> memberStart = new BindingList<Member>()
-        {
-            new Member("Test"),
-            new Member("Why"),
-        };
+        BindingList<Member> memberStart = new BindingList<Member>();
 
-        List<Member> memberRound = new List<Member>();
-        List<Member> memberPay = new List<Member>();
+        BindingList<Member> memberRound = new BindingList<Member>();
+        BindingList<Member> memberPay = new BindingList<Member>();
 
         public Form1()
         {
@@ -36,17 +32,17 @@ namespace Adoassignment
             memberStart.Add(new Member("David"));
             memberStart.Add(new Member("John"));
 
-            
-            
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             listMembers.DataSource = memberStart;
             listMembers.DisplayMember = "name";
-            
+
+            listRoundInfo.DataSource = memberRound;
+            listRoundInfo.DisplayMember = "name";
+
+
         }
 
         private void BtnAddMember_Click(object sender, EventArgs e)
@@ -75,25 +71,23 @@ namespace Adoassignment
 
         private void BtnAddMemberToRound_Click(object sender, EventArgs e)
         {
-            var selectedName = getSelectedMemberName();
+            var selectedMember = listMembers.SelectedItem as Member;
 
-            if (selectedName == null)
-            {
+            if (selectedMember == null)
                 MessageBox.Show("Please, select a team member first");
-            }
             else
             {
-                //if(!listBalanceInfo.Items.Contains())
-                listRoundInfo.Items.Add(selectedName);
+                if(!memberRound.Contains(selectedMember))
+                    memberRound.Add(selectedMember);
 
             }
 
         }
 
-        private String getSelectedMemberName()
+        private void BtnRemoveMemberFromRound_Click(object sender, EventArgs e)
         {
-
-            return listMembers?.SelectedItem.ToString();
+            var selectedMember = listRoundInfo.SelectedItem as Member;
+            memberRound.Remove(selectedMember);
         }
     }
 }

@@ -33,7 +33,7 @@
             this.btnAddMember = new System.Windows.Forms.Button();
             this.btnRemoveM = new System.Windows.Forms.Button();
             this.btnAddMemberToRound = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnRemoveMemberFromRound = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.listMembers = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -51,7 +51,7 @@
             // btnAddBigTeam
             // 
             this.btnAddBigTeam.Location = new System.Drawing.Point(8, 30);
-            this.btnAddBigTeam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddBigTeam.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddBigTeam.Name = "btnAddBigTeam";
             this.btnAddBigTeam.Size = new System.Drawing.Size(101, 112);
             this.btnAddBigTeam.TabIndex = 0;
@@ -62,7 +62,7 @@
             // b
             // 
             this.b.Location = new System.Drawing.Point(0, 222);
-            this.b.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.b.Margin = new System.Windows.Forms.Padding(4);
             this.b.Name = "b";
             this.b.Size = new System.Drawing.Size(109, 111);
             this.b.TabIndex = 1;
@@ -72,7 +72,7 @@
             // btnAddMember
             // 
             this.btnAddMember.Location = new System.Drawing.Point(117, 225);
-            this.btnAddMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddMember.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddMember.Name = "btnAddMember";
             this.btnAddMember.Size = new System.Drawing.Size(88, 103);
             this.btnAddMember.TabIndex = 2;
@@ -83,7 +83,7 @@
             // btnRemoveM
             // 
             this.btnRemoveM.Location = new System.Drawing.Point(213, 222);
-            this.btnRemoveM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRemoveM.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemoveM.Name = "btnRemoveM";
             this.btnRemoveM.Size = new System.Drawing.Size(103, 106);
             this.btnRemoveM.TabIndex = 3;
@@ -94,7 +94,7 @@
             // btnAddMemberToRound
             // 
             this.btnAddMemberToRound.Location = new System.Drawing.Point(365, 31);
-            this.btnAddMemberToRound.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddMemberToRound.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddMemberToRound.Name = "btnAddMemberToRound";
             this.btnAddMemberToRound.Size = new System.Drawing.Size(37, 74);
             this.btnAddMemberToRound.TabIndex = 4;
@@ -102,20 +102,21 @@
             this.btnAddMemberToRound.UseVisualStyleBackColor = true;
             this.btnAddMemberToRound.Click += new System.EventHandler(this.BtnAddMemberToRound_Click);
             // 
-            // button6
+            // btnRemoveMemberFromRound
             // 
-            this.button6.Location = new System.Drawing.Point(365, 117);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(37, 76);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "<<";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnRemoveMemberFromRound.Location = new System.Drawing.Point(365, 117);
+            this.btnRemoveMemberFromRound.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemoveMemberFromRound.Name = "btnRemoveMemberFromRound";
+            this.btnRemoveMemberFromRound.Size = new System.Drawing.Size(37, 76);
+            this.btnRemoveMemberFromRound.TabIndex = 5;
+            this.btnRemoveMemberFromRound.Text = "<<";
+            this.btnRemoveMemberFromRound.UseVisualStyleBackColor = true;
+            this.btnRemoveMemberFromRound.Click += new System.EventHandler(this.BtnRemoveMemberFromRound_Click);
             // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(633, 92);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(60, 101);
             this.button7.TabIndex = 6;
@@ -127,7 +128,7 @@
             this.listMembers.FormattingEnabled = true;
             this.listMembers.ItemHeight = 16;
             this.listMembers.Location = new System.Drawing.Point(141, 30);
-            this.listMembers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listMembers.Margin = new System.Windows.Forms.Padding(4);
             this.listMembers.Name = "listMembers";
             this.listMembers.Size = new System.Drawing.Size(137, 148);
             this.listMembers.TabIndex = 7;
@@ -142,9 +143,9 @@
             this.groupBox1.Controls.Add(this.listMembers);
             this.groupBox1.Controls.Add(this.btnAddBigTeam);
             this.groupBox1.Location = new System.Drawing.Point(16, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(341, 427);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
@@ -153,7 +154,7 @@
             // txtAddMember
             // 
             this.txtAddMember.Location = new System.Drawing.Point(141, 364);
-            this.txtAddMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddMember.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddMember.Name = "txtAddMember";
             this.txtAddMember.Size = new System.Drawing.Size(132, 22);
             this.txtAddMember.TabIndex = 5;
@@ -191,7 +192,7 @@
             // txtBuyer
             // 
             this.txtBuyer.Location = new System.Drawing.Point(477, 336);
-            this.txtBuyer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuyer.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuyer.Name = "txtBuyer";
             this.txtBuyer.Size = new System.Drawing.Size(132, 22);
             this.txtBuyer.TabIndex = 11;
@@ -199,7 +200,7 @@
             // txtPrice
             // 
             this.txtPrice.Location = new System.Drawing.Point(477, 374);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(132, 22);
             this.txtPrice.TabIndex = 12;
@@ -209,7 +210,7 @@
             this.listRoundInfo.FormattingEnabled = true;
             this.listRoundInfo.ItemHeight = 16;
             this.listRoundInfo.Location = new System.Drawing.Point(410, 28);
-            this.listRoundInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listRoundInfo.Margin = new System.Windows.Forms.Padding(4);
             this.listRoundInfo.Name = "listRoundInfo";
             this.listRoundInfo.Size = new System.Drawing.Size(196, 164);
             this.listRoundInfo.TabIndex = 13;
@@ -219,7 +220,7 @@
             this.listBalanceInfo.FormattingEnabled = true;
             this.listBalanceInfo.ItemHeight = 16;
             this.listBalanceInfo.Location = new System.Drawing.Point(701, 33);
-            this.listBalanceInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBalanceInfo.Margin = new System.Windows.Forms.Padding(4);
             this.listBalanceInfo.Name = "listBalanceInfo";
             this.listBalanceInfo.Size = new System.Drawing.Size(231, 276);
             this.listBalanceInfo.TabIndex = 14;
@@ -236,10 +237,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnRemoveMemberFromRound);
             this.Controls.Add(this.btnAddMemberToRound);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -257,7 +258,7 @@
         private System.Windows.Forms.Button btnAddMember;
         private System.Windows.Forms.Button btnRemoveM;
         private System.Windows.Forms.Button btnAddMemberToRound;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnRemoveMemberFromRound;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ListBox listMembers;
         private System.Windows.Forms.GroupBox groupBox1;
