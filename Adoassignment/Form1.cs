@@ -24,8 +24,6 @@ namespace Adoassignment
             
         }
 
-        
-
         private void BtnAddBigTeam_Click(object sender, EventArgs e)
         {
             memberStart.Add(new Member("Steve"));
@@ -38,6 +36,8 @@ namespace Adoassignment
         {
             listMembers.DataSource = memberStart;
             listMembers.DisplayMember = "name";
+            boxBuyer.DataSource = memberStart;
+            
 
             listRoundInfo.DataSource = memberRound;
             listRoundInfo.DisplayMember = "name";
@@ -88,6 +88,34 @@ namespace Adoassignment
         {
             var selectedMember = listRoundInfo.SelectedItem as Member;
             memberRound.Remove(selectedMember);
+        }
+
+        private void BtnBuyRound_Click(object sender, EventArgs e)
+        {
+            if (txtBuyer != null && txtPrice != null)
+            {
+                for (int i = memberStart.Count - 1; i >= 0; i--)
+                {
+                    memberPay[i] = memberStart[i];
+                    if (memberPay[i].name == txtBuyer.Text)
+                    {
+                        memberPay[i].balance += double.Parse(txtPrice.Text);
+                    }
+                    foreach (Member m in memberRound)
+                    {
+                        if (m.name == memberPay[i].name)
+                        {
+                            memberPay[i].balance -= double.Parse(txtPrice.Text) / memberRound.Count;
+                            break;
+                        }
+                    }
+
+                }
+            }
+            else
+                MessageBox.Show("Fill in the round buyer info");
+            
+
         }
     }
 }
