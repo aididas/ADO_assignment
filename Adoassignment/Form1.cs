@@ -78,7 +78,7 @@ namespace Adoassignment
 
         private void B_Click(object sender, EventArgs e)
         {
-
+            listMembers.Items.RemoveAt(listMembers.SelectedIndex);
         }
     }
 }
