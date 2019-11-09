@@ -37,10 +37,10 @@
             this.button7 = new System.Windows.Forms.Button();
             this.listMembers = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtAddMember = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtAddMember = new System.Windows.Forms.TextBox();
             this.txtBuyer = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.listRoundInfo = new System.Windows.Forms.ListBox();
@@ -66,6 +66,7 @@
             this.b.TabIndex = 1;
             this.b.Text = "Remove selected team member";
             this.b.UseVisualStyleBackColor = true;
+            this.b.Click += new System.EventHandler(this.B_Click);
             // 
             // btnAddMember
             // 
@@ -138,6 +139,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Team members";
             // 
+            // txtAddMember
+            // 
+            this.txtAddMember.Location = new System.Drawing.Point(106, 296);
+            this.txtAddMember.Name = "txtAddMember";
+            this.txtAddMember.Size = new System.Drawing.Size(100, 20);
+            this.txtAddMember.TabIndex = 5;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -164,13 +172,6 @@
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 10;
             this.label3.Text = "Round price";
-            // 
-            // txtAddMember
-            // 
-            this.txtAddMember.Location = new System.Drawing.Point(106, 296);
-            this.txtAddMember.Name = "txtAddMember";
-            this.txtAddMember.Size = new System.Drawing.Size(100, 20);
-            this.txtAddMember.TabIndex = 5;
             // 
             // txtBuyer
             // 
