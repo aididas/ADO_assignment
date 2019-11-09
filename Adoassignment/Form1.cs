@@ -68,11 +68,17 @@ namespace Adoassignment
             string toRemove = txtAddMember.Text;
             for(int i = memberStart.Count - 1; i >= 0; i--) //foreach(Member m in memberStart)
             {
-                //if(m.name == toRemove && m.balance == 0)
-                //{
-                   // memberStart.Remove(m);
-                //}
+                if(memberStart[i].name == toRemove && memberStart[i].balance == 0)
+                {
+                    memberStart.RemoveAt(i);
+                    listMembers.Items.RemoveAt(i);
+                }
             }
+        }
+
+        private void B_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
